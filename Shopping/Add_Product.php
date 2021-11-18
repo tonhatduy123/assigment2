@@ -119,7 +119,7 @@
 				 <div class="form-group"> 
 					<label for="txtTen" class="col-sm-2 control-label">Name Store(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Name Store" value=''/>
+							      <input type="text" name="txtNameStore" id="txtNameStore" class="form-control" placeholder="Name Store" value=''/>
 							</div>
                 </div>   
                 <div class="form-group">   

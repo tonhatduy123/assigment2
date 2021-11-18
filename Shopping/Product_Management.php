@@ -25,7 +25,7 @@
         <form name="frm" method="post" action="">
         <h1 style="text-align: center;">Product Management</h1>
         <p>
-            <a href="?page=add_product"><img src="images/add.png" alt="Thêm mới" width="16" height="16" border="0" />&nbsp;Add new</a>
+            <a href="?page=Add_product"><img src="images/add.png" alt="Thêm mới" width="16" height="16" border="0" />&nbsp;Add new</a>
         </p>
         <table id="tableproduct" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
@@ -63,10 +63,10 @@
               <td><?php echo $row["name_store"]; ?></td>
              <td align='center' class='cotNutChucNang'>
                 <img src='img/<?php echo $row['pro_image']; ?>' border='0' width="50" height="50"  /></td>
-             <td align='center' class='cotNutChucNang'><a href="?page=update_product&&id=<?php echo $row["product_id"]; ?>">
+             <td align='center' class='cotNutChucNang'><a href="?page=Update_product&&id=<?php echo $row["product_id"]; ?>">
              <img src='images/edit.png' border='0'/></a></td>
              <td style='text-align:center'>
-             <a href="index.php?page=product_management&&funtion=del&&id=<?php echo $row["product_id"]; ?>"
+             <a href="index.php?page=Product_management&&funtion=del&&id=<?php echo $row["product_id"]; ?>"
              onclick="return deleteConfirm()">
             <img src='images/delete.png' border='0' /></a></td>
              </tr>
