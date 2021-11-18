@@ -21,7 +21,7 @@
 	}
 	if(isset($_GET["id"])){
 		$id=$_GET["id"];
-		$sqlstring="SELECT product_name, price, smalldesc, detaildesc, prodate, pro_qty,
+		$sqlstring="SELECT product_name, price,namestore, smalldesc, detaildesc, prodate, pro_qty,
 		pro_image, cat_id from product where product_id='$id'";
 		$result=pg_query($conn,$sqlstring);
 		$row=pg_fetch_array($result, NULL,  PGSQL_ASSOC);
@@ -62,7 +62,7 @@
 				<div class="form-group"> 
 					<label for="txtTen" class="col-sm-2 control-label">Name Store(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtNameStore" id="txtNameStore" class="form-control" placeholder="Name Store" value=''/>
+							      <input type="text" name="txtNameStore" id="txtNameStore" class="form-control" placeholder="Name Store" value='<?php echo $namestore; ?>'/>
 							</div>
                           
                 <div class="form-group">  
@@ -118,6 +118,7 @@
 		$proname=$_POST["txtName"];
 		$detail=$_POST['txtDetail'];
 		$price=$_POST['txtPrice'];
+		$namestore=$_POST['txtNameStore'];
 		$qty=$_POST['txtQty'];
 		$pic=$_FILES['txtImage'];
 		$category=$_POST['CategoryList'];
@@ -130,6 +131,9 @@
 		}
 		if(!is_numeric($price)){
 			$err.="<li>Product price must be number</li>";
+		}
+		if(trim($namestore)==""){
+			$err.="<li>Enter product name, please</li>";
 		}
 		if(!is_numeric($qty)){
 			$err.="<li>Product price must be number</li>";
@@ -148,10 +152,10 @@
 					    if(pg_num_rows($result)==0){
 						        copy($pic['tmp_name'], "img/".$pic['name']);
 						        $filePic = $pic['name'];
-						        $sqlstring="UPDATE product set product_name='$proname', price=$price, smalldesc='$short',
+						        $sqlstring="UPDATE product set product_name='$proname', price=$price,namestore=$namestore, smalldesc='$short',
 						        detaildesc='$detail', pro_qty=$qty,
 						        pro_image='$filePic',cat_id='$category',
-						        prodate='".date('Y-m-d H:i:s')."' WHERE product_Iid='$id'";
+						        prodate='".date('Y-m-d H:i:s')."' WHERE product_id='$id'";
 						        pg_query($conn,$sqlstring);
 						        echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
 					        }
@@ -172,7 +176,7 @@
 				$result=pg_query($conn,$sq);
 				if(pg_num_rows($result)==0){
 					$sqlstring="UPDATE product set product_name='$proname',
-					price=$price, smalldesc='$short', detaildesc='$detail',
+					price=$price,namestore=$namestore,  smalldesc='$short', detaildesc='$detail',
 					pro_qty=$qty, cat_id='$category',
 					prodate='".date('Y-m-d H:i:s')."' WHERE product_id='$id'";
 					pg_query($conn,$sqlstring);

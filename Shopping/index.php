@@ -80,7 +80,7 @@
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="?page=Category_Management">Category </a></li>
 										<li><a href="?page=product_management">Product</a></li>
-                                        <li><a href="?page=Management_Shop">Store</a></li>
+                                        
                                       
                                     </ul>
                                     <?php
@@ -138,7 +138,7 @@
         {
             include_once("Product_Management.php");
         }
-        elseif($page=="Add_Category")
+        elseif($page=="add_Category")
         {
             include_once("Add_Category.php");
         }
