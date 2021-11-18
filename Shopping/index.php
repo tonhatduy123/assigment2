@@ -80,6 +80,7 @@
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="?page=Category_Management">Category </a></li>
 										<li><a href="?page=product_management">Product</a></li>
+                                        <li><a href="?page=Management_Shop">Store</a></li>
                                       
                                     </ul>
                                     <?php
