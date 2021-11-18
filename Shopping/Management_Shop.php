@@ -40,7 +40,7 @@
   <form name="frm" method="post" action="">
     <h1>Shop Management</h1>
     <p>
-      <img src="img/add.png" alt="" width="16" height="16" border="0" />
+      <img src="images/add.png" alt="" width="16" height="16" border="0" />
       <a href="?page=Add_Shop"> Add new </a>
     </p>
     <table id="tableproduct" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -69,8 +69,8 @@
             <td><?php echo $row["shop_name"]; ?></td>
             <td><?php echo $row["address"]; ?></td>
             <td><?php echo $row["phone"]; ?></td>
-            <td align='center' class='cotNutChucNang'><a href="?page=Update_Shop&&id=<?php echo $row["shop_id"]; ?>"><img src='img/edit.png' border='0' width="30" height="30" /></a></td>
-            <td align='center' class='cotNutChucNang'><a href="?page=Management_Shop&&function=del&&id=<?php echo $row["shop_id"]; ?>" onclick="return deleteConfirm()"><img src='img/delete.png' border='0' width="30" height="30" /></a></td>
+            <td align='center' class='cotNutChucNang'><a href="?page=Update_Shop&&id=<?php echo $row["shop_id"]; ?>"><img src='images/edit.png' border='0' width="30" height="30" /></a></td>
+            <td align='center' class='cotNutChucNang'><a href="?page=Management_Shop&&function=del&&id=<?php echo $row["shop_id"]; ?>" onclick="return deleteConfirm()"><img src='images/delete.png' border='0' width="30" height="30" /></a></td>
           </tr>
         <?php
           $No++;
