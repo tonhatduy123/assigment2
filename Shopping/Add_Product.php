@@ -26,6 +26,7 @@
 		$detail = $_POST["txtDetail"];
 		$price = $_POST["txtPrice"];
 		$qty = $_POST["txtQty"];
+		$namestore = $_POST["txtnamestore"];
 		$pic = $_FILES["txtImage"];
 		$category = $_POST["CategoryList"];
 		$err="";
@@ -34,6 +35,10 @@
 			$err .= "Invalid ID</br>";
 		}
 		if(trim($proname)=="")
+		{
+			$err .= "Invalid Name</br>";
+		}
+		if(trim($namestore)=="")
 		{
 			$err .= "Invalid Name</br>";
 		}
@@ -65,7 +70,7 @@
 					{
 						copy($pic['tmp_name'], "img/".$pic['name']);
 						$filepic = $pic['name'];
-						$sqlString = "insert into product(product_id, product_name, price, smalldesc, detaildesc, prodate, pro_qty, pro_image, cat_id)
+						$sqlString = "insert into product(product_id, product_name, price, name_store, smalldesc, detaildesc, prodate, pro_qty, pro_image, cat_id)
 						values('$id','$proname','$price','$short','$detail','".date('Y-m-d H:i:s')."',$qty,'$filepic','$category')";
 						pg_query($conn,$sqlString);
 						echo '<meta http-equiv="refresh" content="0;URL =?page=product_management"';
@@ -111,6 +116,12 @@
 							      <input type="text" name="txtPrice" id="txtPrice" class="form-control" placeholder="Price" value=''/>
 							</div>
                  </div>   
+				 <div class="form-group"> 
+					<label for="txtTen" class="col-sm-2 control-label">Name Store(*):  </label>
+							<div class="col-sm-10">
+							      <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Name Store" value=''/>
+							</div>
+                </div>   
                 <div class="form-group">   
                     <label for="lblShort" class="col-sm-2 control-label">Short description(*):  </label>
 							<div class="col-sm-10">

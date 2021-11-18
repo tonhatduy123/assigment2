@@ -29,6 +29,7 @@
 		$short=$row['smalldesc'];
 		$detail=$row['detaildesc'];
 		$price=$row['price'];
+		$namestore = $_POST["txtnamestore"];
 		$qty=$row['pro_qty'];
 		$pic=$row['pro_image'];
 		$category=$row['cat_id'];
@@ -58,6 +59,11 @@
 							    <?php bind_Category_List($conn, $category); ?>
 							</div>
                 </div>  
+				<div class="form-group"> 
+					<label for="txtTen" class="col-sm-2 control-label">Name Store(*):  </label>
+							<div class="col-sm-10">
+							      <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Name Store" value=''/>
+							</div>
                           
                 <div class="form-group">  
                     <label for="lblGia" class="col-sm-2 control-label">Price(*):  </label>
