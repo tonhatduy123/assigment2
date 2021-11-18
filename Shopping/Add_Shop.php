@@ -48,7 +48,7 @@
 			{
 				$sqlstring = "INSERT INTO shops (shop_id, shop_name, phone, email, address) VALUES ('$id','$name','$phone','$email','$address')";
 				pg_query($conn, $sqlstring);
-				echo '<meta http-equiv="refresh" content="0;URL=?page=shops_management"/>';
+				echo '<meta http-equiv="refresh" content="0;URL=?page=Management_Shop"/>';
 			}
 			else
 			{
@@ -97,7 +97,7 @@
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
 						      <input type="submit"  class="btn btn-primary" name="btnAdd" id="btnAdd" value="Add New"/>
-                              <input type="button" class="btn btn-primary" name="btnIgnore"  id="btnIgnore" value="Cancel" onclick="window.location='?page=shops_management'" />
+                              <input type="button" class="btn btn-primary" name="btnIgnore"  id="btnIgnore" value="Cancel" onclick="window.location='?page=Management_Shop'" />
                               	
 						</div>
 					</div>

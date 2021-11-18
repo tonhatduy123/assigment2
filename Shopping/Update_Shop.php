@@ -10,7 +10,7 @@
   <!-- fontAwsomae-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
   <!-- webicon -->
-  <link rel="shortcut icon" href="./tree/img/logo1.png">
+  <link rel="shortcut icon" href="img/logo1.png">
 
 
   <title>Dery</title>
@@ -72,7 +72,7 @@
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
 								<input type="submit"  class="btn btn-primary" name="btnUpdate" id="btnUpdate" value="Update"/>
-								<input type="button" class="btn btn-primary" name="btnIgnore"  id="btnIgnore" value="Cancel" onclick="window.location='?page=shops_management'"/>
+								<input type="button" class="btn btn-primary" name="btnIgnore"  id="btnIgnore" value="Cancel" onclick="window.location='?page=Management_Shop'"/>
 									
 							</div>
 						</div>
@@ -81,7 +81,7 @@
 		<?php
 	}
 	else{
-		echo '<meta http-equiv="refresh" content="0;URL=?page=shops_management"/>';
+		echo '<meta http-equiv="refresh" content="0;URL=?page=Management_Shop"/>';
 	}
 	?>
 
@@ -109,7 +109,7 @@
 			if (pg_num_rows($result)==0)
 			{
 				pg_query($conn,"UPDATE shops SET shop_name = '$shop_name', address = '$address', phone = '$phone', email = '$email' where shop_id = '$id'");
-				echo '<meta http-equiv="refresh" content="0;URL=?page=shops_management"/>';
+				echo '<meta http-equiv="refresh" content="0;URL=?page=Management_Shop"/>';
 			}
 			else
 			{
